@@ -1,0 +1,24 @@
+//
+//  ContentView.swift
+//  Battle Card Game
+//
+//  Created by Moriah Bender on 4/30/25.
+//
+
+import SwiftUI
+
+struct ContentView: View {
+    var body: some View {
+        VStack {
+            Image(systemName: "globe")
+                .imageScale(.large)
+                .foregroundStyle(.tint)
+            Text("Hello, world!")
+        }
+        .padding()
+    }
+}
+
+#Preview {
+    ContentView()
+}
