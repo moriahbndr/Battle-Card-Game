@@ -9,15 +9,32 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        ZStack {
+                    Image("background")
+                        .resizable()
+                        .scaledToFill()
+                        .ignoresSafeArea()
+
+                    VStack {
+                        Spacer()
+                        
+                        NavigationLink(destination: GameView()) {
+                            Text("Start Game")
+                                .font(.title)
+                                .fontWeight(.bold)
+                                .foregroundColor(.white)
+                                .padding()
+                                .frame(width: 200)
+                                .background(Color.blue)
+                                .cornerRadius(12)
+                                .shadow(radius: 5)
+                        }
+                        
+                        Spacer()
+                    }
+                }
+            }
         }
-        .padding()
-    }
-}
 
 #Preview {
     ContentView()
