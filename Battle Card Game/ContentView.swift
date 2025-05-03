@@ -17,6 +17,14 @@ struct ContentView: View {
                     .ignoresSafeArea()
                 
                 VStack {
+                    
+                    Spacer()
+                    Text(" MAIN MENU ")
+                        .font(.headline)
+                        .foregroundColor(Color.white)
+                        .padding()
+                        
+                    
                     Spacer()
                     
                     NavigationLink(destination: GameView()) {
@@ -25,13 +33,36 @@ struct ContentView: View {
                             .fontWeight(.bold)
                             .foregroundColor(.white)
                             .padding()
-                            .frame(width: 200)
+                            .frame(width: 215)
                             .background(Color.blue)
                             .cornerRadius(12)
                             .shadow(radius: 5)
                     }
                     
+                    NavigationLink(destination: CardMenu()) {
+                        Text("View Cards")
+                            .font(.title)
+                            .fontWeight(.bold)
+                            .foregroundColor(.white)
+                            .padding()
+                            .frame(width: 215)
+                            .background(Color.blue)
+                            .cornerRadius(12)
+                            .shadow(radius: 5)
+                    }
+                    
+                    Text("Account")
+                        .font(.title)
+                        .fontWeight(.bold)
+                        .foregroundColor(.white)
+                        .padding()
+                        .frame(width: 215)
+                        .background(Color.blue)
+                        .cornerRadius(12)
+                        .shadow(radius: 5)
+                    
                     Spacer()
+
                 }
             }
         }
