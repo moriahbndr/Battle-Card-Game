@@ -8,7 +8,6 @@
 import SwiftUI
 import Foundation
 
-// User inventory goes here - cards, decks, etc.
 class InventoryManager: ObservableObject {
     
 }
