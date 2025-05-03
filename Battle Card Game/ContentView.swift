@@ -8,7 +8,10 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    
     var body: some View {
+        
         NavigationView {
             ZStack {
                 Image("background")
@@ -24,8 +27,6 @@ struct ContentView: View {
                         .foregroundColor(Color.white)
                         .padding()
                         
-                    
-                    Spacer()
                     
                     NavigationLink(destination: GameView()) {
                         Text("Start Game")
@@ -51,15 +52,18 @@ struct ContentView: View {
                             .shadow(radius: 5)
                     }
                     
-                    Text("Account")
-                        .font(.title)
-                        .fontWeight(.bold)
-                        .foregroundColor(.white)
-                        .padding()
-                        .frame(width: 215)
-                        .background(Color.blue)
-                        .cornerRadius(12)
-                        .shadow(radius: 5)
+                    NavigationLink(destination: AccountView()) {
+                        Text("Account")
+                            .font(.title)
+                            .fontWeight(.bold)
+                            .foregroundColor(.white)
+                            .padding()
+                            .frame(width: 215)
+                            .background(Color.blue)
+                            .cornerRadius(12)
+                            .shadow(radius: 5)
+                    }
+                    
                     
                     Spacer()
 

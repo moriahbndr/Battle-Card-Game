@@ -15,10 +15,13 @@ struct Card: Identifiable, Equatable {
     var image: Image {
         Image(imageName)
     }
+    
+    var cardLibrary: [Card] = []       // card inventory
 }
 
 
 struct TempoCards {
+    
     static let all: [Card] = [
         Card(name: "Fish", power: 10, imageName: "Fish"),
         Card(name: "Goblin", power: 6, imageName: "Goblin"),
@@ -33,6 +36,8 @@ struct TempoCards {
     static func drawRandom() -> Card {
         all.randomElement()!
     }
-}
+    
+    // these are the cards each new player will start with //
 
+}
 

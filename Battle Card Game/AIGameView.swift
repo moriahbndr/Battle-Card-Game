@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct AIGameView: View {
+    
     @State private var playerHand: [Card] = Array(TempoCards.all.shuffled().prefix(5))
     @State private var aiHand: [Card] = Array(TempoCards.all.shuffled().prefix(5))
 
