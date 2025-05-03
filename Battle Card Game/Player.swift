@@ -22,4 +22,3 @@ class Player: ObservableObject {
     
 
 }
-
