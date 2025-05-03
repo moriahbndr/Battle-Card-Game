@@ -17,6 +17,7 @@ struct Card: Identifiable, Equatable {
     }
 }
 
+
 struct TempoCards {
     static let all: [Card] = [
         Card(name: "Fish", power: 10, imageName: "Fish"),
