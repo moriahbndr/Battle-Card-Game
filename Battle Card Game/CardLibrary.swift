@@ -15,6 +15,8 @@ struct Card: Identifiable, Equatable {
     var image: Image {
         Image(imageName)
     }
+
+    var cardLibrary: [Card] = []       // card inventory
 }
 
 
