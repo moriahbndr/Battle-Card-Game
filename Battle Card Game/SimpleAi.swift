@@ -19,8 +19,6 @@ struct SimpleAI {
     static var difficulty: AIDifficulty = .medium
 
     static func chooseCard(from hand: [Card], against playerCard: Card) -> Card? {
-        // Simulated delay (must be handled in calling view with DispatchQueue)
-        // This function itself is synchronous
 
         switch difficulty {
         case .easy:
