@@ -15,22 +15,23 @@ struct Card: Identifiable, Equatable {
     var image: Image {
         Image(imageName)
     }
-    
+
     var cardLibrary: [Card] = []       // card inventory
 }
 
-
-struct TempoCards {
-    
+struct RealCards {
     static let all: [Card] = [
-        Card(name: "Fish", power: 10, imageName: "Fish"),
-        Card(name: "Goblin", power: 6, imageName: "Goblin"),
-        Card(name: "Troll", power: 7, imageName: "Troll"),
-        Card(name: "Wolf", power: 8, imageName: "Wolf"),
-        Card(name: "Slime", power: 9, imageName: "Slime"),
-        Card(name: "Orc", power: 5, imageName: "Orc"),
-        Card(name: "Orc Black Eye", power: 7, imageName: "OrcBlackEye"),
-        Card(name: "Fish Tamtacule", power: 8, imageName: "Fish2") // Add more as needed
+        Card(name: "Kitten", power: 0, imageName: "Kitten"),
+        Card(name: "Fish", power: 1, imageName: "Fish"),
+        Card(name: "Slime", power: 2, imageName: "Slime"),
+        Card(name: "Sad Slime", power: 3, imageName: "SadSlime"),
+        Card(name: "Frog", power: 4, imageName: "Frog"),
+        Card(name: "Pixie", power: 5, imageName: "Pixie"),
+        Card(name: "Wolf", power: 6, imageName: "Wolf"),
+        Card(name: "Fire Wolf", power: 7, imageName: "FireWolf"),
+        Card(name: "Ice Wolf", power: 7, imageName: "IceWolf"),
+        Card(name: "Ghost", power: 8, imageName: "Ghost"),
+        Card(name: "Lion", power: 9, imageName: "Lion")
     ]
 
     static func drawRandom() -> Card {
