@@ -21,7 +21,7 @@ struct AIGameView: View {
     var body: some View {
         VStack(spacing: 16) {
             // AI Name
-            Text("AI")
+            Text("Opponent")
                 .font(.title)
 
             // AI Cards (back only)
@@ -42,7 +42,7 @@ struct AIGameView: View {
                         aiPlayed.image
                             .resizable()
                             .frame(width: 80, height: 120)
-                        Text("AI: \(aiPlayed.power)")
+                        Text("Opponent: \(aiPlayed.power)")
                     }
                 }
 
@@ -94,7 +94,7 @@ struct AIGameView: View {
             }
 
             // Score
-            Text("Score — You: \(playerScore) | AI: \(aiScore)")
+            Text("Score — You: \(playerScore) | Opponent: \(aiScore)")
                 .font(.headline)
                 .padding(.top, 10)
         }

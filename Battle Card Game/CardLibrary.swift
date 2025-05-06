@@ -28,8 +28,8 @@ struct RealCards {
         Card(name: "Frog", power: 4, imageName: "Frog"),
         Card(name: "Pixie", power: 5, imageName: "Pixie"),
         Card(name: "Wolf", power: 6, imageName: "Wolf"),
-        Card(name: "Fire Wolf", power: 7, imageName: "FireWolf"),
-        Card(name: "Ice Wolf", power: 7, imageName: "IceWolf"),
+        Card(name: "Fire Wolf", power: 7, imageName: "FireWolfTrue"),
+        Card(name: "Ice Wolf", power: 7, imageName: "IceWolfTrue"),
         Card(name: "Ghost", power: 8, imageName: "Ghost"),
         Card(name: "Lion", power: 9, imageName: "Lion")
     ]
