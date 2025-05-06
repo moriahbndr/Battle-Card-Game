@@ -9,8 +9,8 @@ import SwiftUI
 
 struct AIGameView: View {
     
-    @State private var playerHand: [Card] = Array(TempoCards.all.shuffled().prefix(5))
-    @State private var aiHand: [Card] = Array(TempoCards.all.shuffled().prefix(5))
+    @State private var playerHand: [Card] = Array(RealCards.all.shuffled().prefix(5))
+    @State private var aiHand: [Card] = Array(RealCards.all.shuffled().prefix(5))
 
     @State private var playerCard: Card?
     @State private var aiCard: Card?
@@ -21,7 +21,7 @@ struct AIGameView: View {
     var body: some View {
         VStack(spacing: 16) {
             // AI Name
-            Text("AI")
+            Text("Opponent")
                 .font(.title)
 
             // AI Cards (back only)
@@ -42,7 +42,7 @@ struct AIGameView: View {
                         aiPlayed.image
                             .resizable()
                             .frame(width: 80, height: 120)
-                        Text("AI: \(aiPlayed.power)")
+                        Text("Opponent: \(aiPlayed.power)")
                     }
                 }
 
@@ -121,7 +121,7 @@ struct AIGameView: View {
             // If equal, no points
         } else {
             // AI has no valid card, draw one
-            aiHand.append(TempoCards.drawRandom())
+            aiHand.append(RealCards.drawRandom())
         }
 
         // Clear played cards after delay
@@ -132,7 +132,7 @@ struct AIGameView: View {
     }
 
     func drawCard() {
-        playerHand.append(TempoCards.drawRandom())
+        playerHand.append(RealCards.drawRandom())
     }
 }
 #Preview {
