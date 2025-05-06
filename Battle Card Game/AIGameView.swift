@@ -94,7 +94,7 @@ struct AIGameView: View {
             }
 
             // Score
-            Text("Score — You: \(playerScore) | AI: \(aiScore)")
+            Text("Score — You: \(playerScore) | Opponent: \(aiScore)")
                 .font(.headline)
                 .padding(.top, 10)
         }
