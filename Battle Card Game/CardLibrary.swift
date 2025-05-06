@@ -19,7 +19,6 @@ struct Card: Identifiable, Equatable {
     var cardLibrary: [Card] = []       // card inventory
 }
 
-
 struct RealCards {
     static let all: [Card] = [
         Card(name: "Kitten", power: 0, imageName: "Kitten"),
@@ -38,6 +37,8 @@ struct RealCards {
     static func drawRandom() -> Card {
         all.randomElement()!
     }
-}
+    
+    // these are the cards each new player will start with //
 
+}
 
