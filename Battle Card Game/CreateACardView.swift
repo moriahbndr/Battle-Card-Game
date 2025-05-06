@@ -21,7 +21,8 @@ struct CreateACardView : View{
         }
     }
    
+
+}
 #Preview {
     AccountView()
-}
 }
