@@ -227,4 +227,3 @@ struct CardMenu: View {
 #Preview {
     CardMenu()
 }
-
