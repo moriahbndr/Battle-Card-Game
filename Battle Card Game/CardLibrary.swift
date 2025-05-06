@@ -19,10 +19,9 @@ struct Card: Identifiable, Equatable {
     var cardLibrary: [Card] = []       // card inventory
 }
 
-
 struct RealCards {
     static let all: [Card] = [
-        Card(name: "Kitten", power: 0, imageName: "Kitten"),
+        //Card(name: "Kitten", power: 0, imageName: "Kitten"),
         Card(name: "Fish", power: 1, imageName: "Fish"),
         Card(name: "Slime", power: 2, imageName: "Slime"),
         Card(name: "Sad Slime", power: 3, imageName: "SadSlime"),
