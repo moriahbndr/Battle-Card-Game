@@ -9,8 +9,8 @@ import SwiftUI
 
 struct AIGameView: View {
     
-    @State private var playerHand: [Card] = Array(RealCards.all.shuffled().prefix(5))
-    @State private var aiHand: [Card] = Array(RealCards.all.shuffled().prefix(5))
+    @State private var playerHand: [Card] = Array(RealCards.all.shuffled())
+    @State private var aiHand: [Card] = Array(RealCards.all.shuffled())
 
     @State private var playerCard: Card?
     @State private var aiCard: Card?

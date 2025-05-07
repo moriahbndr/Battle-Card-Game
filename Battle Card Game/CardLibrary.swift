@@ -6,7 +6,7 @@
 //
 import SwiftUI
 
-struct Card: Identifiable, Equatable, Codable {
+struct Card: Identifiable, Equatable, Codable, Hashable {
     var id = UUID()
     let name: String
     let power: Int

@@ -9,11 +9,12 @@
 import SwiftUI
 
 struct CardMenu: View {
-    
-    @StateObject var deckManager = DeckManager() 
+
+    @StateObject var deckManager = DeckManager()
     @State private var showingAddCards = false
     @State private var showingCreateCard = false
     @State private var showingCreateDeck = false
+    @State private var showingSelectedDeck = false
 
     @State private var newDeckName = ""
     
@@ -21,7 +22,8 @@ struct CardMenu: View {
     @State private var playerHand: [Card] = Array(RealCards.all)
 
     @State private var selectedCard: Card? = nil
-    
+    @State private var selectedDeck: Deck? = nil
+
     
     var body: some View {
         
@@ -55,7 +57,7 @@ struct CardMenu: View {
                                             .resizable()
                                             .frame(width: 120, height: 160)
                                         Text(card.name)
-                                            .foregroundColor(.gray)
+                                            .foregroundColor(.yellow)
                                         //Text("Power: \(card.power)")
                                         // .font(.caption)
                                     }
@@ -111,23 +113,34 @@ struct CardMenu: View {
                         
                         // List of Decks
                         List {
-                            ForEach(deckManager.deckList) {
-                                deck in
-                                VStack(alignment: .leading) {
-                                    Text(deck.name)
-                                        .font(.headline)
-                                    Text("\(deck.cards.count) cards")
-                                        .font(.subheadline)
-                                        .foregroundColor(.gray)
+                            ForEach(deckManager.deckList) { deck in
+                                NavigationLink(value: deck){
+                                    VStack(alignment: .leading) {
+                                        Text(deck.name)
+                                            .font(.headline)
+                                        Text("\(deck.cards.count) cards")
+                                            .font(.subheadline)
+                                            .foregroundColor(.gray)
+                                        
+                                    }
                                 }
+                                
                             }
                             .onDelete { indexSet in
                                 indexSet.forEach { i in
                                     deckManager.removeDeck(deckManager.deckList[i])
                                 }
                             }
+                            
+                            
                         }
-                        .frame(maxHeight: 300)
+                         // this is the deck destination //
+                        .navigationDestination(for: Deck.self) { deck in
+                            DeckView(deck: deck)
+                        }
+                        
+                     
+                        //.frame(maxHeight: 300)
                     }
                     
                     

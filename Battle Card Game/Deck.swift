@@ -8,7 +8,7 @@
 import SwiftUI
 import Foundation
 
-struct Deck: Identifiable, CustomStringConvertible, Codable {
+struct Deck: Identifiable, CustomStringConvertible, Codable, Hashable {
     var id = UUID()
     var name: String
     var cards: [Card] = []
