@@ -19,86 +19,95 @@ struct AIGameView: View {
     @State private var aiScore = 0
 
     var body: some View {
-        VStack(spacing: 16) {
-            // AI Name
-            Text("Opponent")
-                .font(.title)
+        
+        ZStack{
+            
+            // Once we find a nice background image, adding it here would be the best place for it
+            
+            VStack(spacing: 16) {
+                
+                // AI Name
+                Text("Opponent")
+                    .font(.title)
 
-            // AI Cards (back only)
-            HStack {
-                ForEach(aiHand) { _ in
-                    Image("Tempo Cards/back") // <-- Replace with your actual back image
-                        .resizable()
-                        .frame(width: 60, height: 90)
-                }
-            }
-
-            Spacer()
-
-            // Played Cards
-            HStack(spacing: 40) {
-                if let aiPlayed = aiCard {
-                    VStack {
-                        aiPlayed.image
+                // AI Cards (back only)
+                HStack {
+                    ForEach(aiHand) { _ in
+                        Image("Tempo Cards/back")
                             .resizable()
-                            .frame(width: 80, height: 120)
-                        Text("Opponent: \(aiPlayed.power)")
+                            .frame(width: 60, height: 90)
                     }
                 }
 
-                if let playerPlayed = playerCard {
-                    VStack {
-                        playerPlayed.image
-                            .resizable()
-                            .frame(width: 80, height: 120)
-                        Text("You: \(playerPlayed.power)")
-                    }
-                }
-            }
+                Spacer()
 
-            Spacer()
+                // Played Cards
+                HStack(spacing: 40) {
 
-            // Player Hand
-            Text("Your Cards")
-                .font(.headline)
-
-            ScrollView(.horizontal) {
-                HStack(spacing: 12) {
-                    ForEach(playerHand) { card in
-                        Button(action: {
-                            playCard(card)
-                        }) {
-                            VStack {
-                                card.image
-                                    .resizable()
-                                    .frame(width: 80, height: 120)
-                                Text(card.name)
-                                Text("Power: \(card.power)")
-                                    .font(.caption)
-                            }
+                    if let aiPlayed = aiCard {
+                        VStack {
+                            aiPlayed.image
+                                .resizable()
+                                .frame(width: 160, height: 200)
+                            Text("Opponent: \(aiPlayed.power)")
                         }
-                        .buttonStyle(.plain)
+                    }
+
+                    if let playerPlayed = playerCard {
+                        VStack {
+                            playerPlayed.image
+                                .resizable()
+                                .frame(width: 160, height: 200)
+                            Text("You: \(playerPlayed.power)")
+                        }
                     }
                 }
-                .padding(.horizontal)
-            }
 
-            // Deck Button
-            Button(action: drawCard) {
-                Text("Draw Card")
-                    .padding(.horizontal, 24)
-                    .padding(.vertical, 12)
-                    .background(Color.orange)
-                    .foregroundColor(.white)
-                    .cornerRadius(10)
-            }
+                Spacer()
 
-            // Score
-            Text("Score — You: \(playerScore) | Opponent: \(aiScore)")
-                .font(.headline)
-                .padding(.top, 10)
+                // Player Hand
+                Text("Your Cards")
+                    .font(.headline)
+
+                ScrollView(.horizontal) {
+                    HStack(spacing: 12) {
+                        ForEach(playerHand) { card in
+                            Button(action: {
+                                playCard(card)
+                            }) {
+                                VStack {
+                                    card.image
+                                        .resizable()
+                                        .frame(width: 80, height: 120)
+                                    Text(card.name)
+                                    Text("Power: \(card.power)")
+                                        .font(.caption)
+                                }
+                            }
+                            .buttonStyle(.plain)
+                        }
+                    }
+                    .padding(.horizontal)
+                }
+
+                // Deck Button
+                Button(action: drawCard) {
+                    Text("Draw Card")
+                        .padding(.horizontal, 24)
+                        .padding(.vertical, 12)
+                        .background(Color.orange)
+                        .foregroundColor(.white)
+                        .cornerRadius(10)
+                }
+
+                // Score
+                Text("Score — You: \(playerScore) | Opponent: \(aiScore)")
+                    .font(.headline)
+                    .padding(.top, 10)
+            }
+            .padding()
         }
-        .padding()
+        
     }
 
     // MARK: - Game Logic
