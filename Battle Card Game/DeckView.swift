@@ -50,10 +50,10 @@ struct DeckView : View{
                             .padding()
                             .sheet(isPresented: $showingAddCards) {
                                 VStack {
-                                    Text("TEST")
+                                    Text("CARD LIBRARY")
                                         .font(.headline)
                                     
-                                    Button("TEST") {
+                                    Button("Coming soon: Card Library will be displayed here for user to add to deck created decks") {
                                         //deckManager.createDeck(name: newDeckName)
                                         //newDeckName = ""
                                         //showingCreateDeck = false
@@ -122,6 +122,7 @@ struct DeckView : View{
     
     
 }
+
 #Preview {
     let sampleDeck = Deck(name: "Starter Deck", cards: Array(RealCards.all.prefix(5)))
         return DeckView(deck: sampleDeck)
