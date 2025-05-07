@@ -26,7 +26,7 @@ struct CardMenu: View {
     var body: some View {
         
         NavigationStack{
-            
+          
             ZStack {
                 Image("background")
                     .resizable()
@@ -35,7 +35,7 @@ struct CardMenu: View {
                 VStack(spacing: 38) {
                     
                     // Showing all cards available
-                    Spacer()
+                    //Spacer()
                     
                     Text("CARD LIBRARY")
                         .font(.title)
@@ -97,19 +97,8 @@ struct CardMenu: View {
                         
                     }
                     
-                    .navigationDestination(isPresented: $showingAddCards) {
-                        AddCardsView()
-                    }
-                    
-                    .navigationDestination(isPresented: $showingCreateCard) {
-                        CreateACardView()
-                    }
-                    
-                    
-                    
                     
                     // FOR DECKS & DECK CREATION //
-                    
                     
                     if(deckManager.deckList.isEmpty){
                         Text("deck library is empty")
@@ -152,7 +141,7 @@ struct CardMenu: View {
                     .cornerRadius(8)
                     
                     
-                    Spacer()
+                    //Spacer()
                     
                     
                 }
@@ -187,12 +176,20 @@ struct CardMenu: View {
                     
                 }
             }
+            
+            .navigationDestination(isPresented: $showingAddCards) {
+                AddCardsView()
+            }
+            
+            .navigationDestination(isPresented: $showingCreateCard) {
+                CreateACardView()
+            }
+            
         }
         
 // if we were to choose a sheet instead of a new page view for creating a card
         //.sheet(isPresented: $showingCreateCard) {
         //    VStack {   }}
-                
                 
                 
        
