@@ -101,8 +101,6 @@ class DeckManager: ObservableObject {
             }
         }
     }
-
- 
     
     // dead code (for now) - Moriah //
     @Published var deckList2: [Card] = []
