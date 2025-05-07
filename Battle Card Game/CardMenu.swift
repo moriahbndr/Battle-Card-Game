@@ -176,13 +176,6 @@ struct CardMenu: View {
                             newDeckName = ""
                             showingCreateDeck = false
                             
-                            // Since this is the section where adding a deck occurs, will have to understad in Swift how to write to a file and read from it since that file will be used as a means for storing data for this game app.
-                            
-                            //  When the Card Library is opened it must immediately read from the text file and display any decks created.
-                            
-                            // Once a player creates a Deck it must immediately be Written to a file (aka. stored)
-                            
-                            // A player must also have the option to delete a deck, modify a deck (adding or removing cards)
                         }
                     }
                     .padding()
@@ -220,7 +213,7 @@ struct CardMenu: View {
                     .bold()
                 
                 Text("Power: \(card.power)")
-                Text("Card Abilities: .....")  // after discussing more card abilities with Kai, can add text about card here + add more
+                Text("Card Abilities: ..... Details coming soon!")  // after discussing more card abilities with Kai, can add text about card here + add more
                     .font(.headline)
                 
                 Button("Close") {
