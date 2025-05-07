@@ -17,16 +17,29 @@ class DeckManager: ObservableObject {
         
     
     @Published var deckList: [Deck] = []       // deck inventory
+    
+    
     private let fileName = "decksCreated.json"  // this is the a "file" where a player's/users deck gets stored to
                                                 // and then read to load for the game
     
     // loadDecks() will always be called when a DeckManager class object is created
+    // sampleDeck provided initially when player opens the cardMenu
     init(){
+        sampleDeck()
         loadDecks()
     }
 
     
     // to create a new Deck
+    
+    func sampleDeck(){
+        let sampleDeck = Deck(name: "Sample Deck", cards: Array(RealCards.all.prefix(5)))
+            //return DeckView(deck: sampleDeck)
+        deckList.append(sampleDeck)
+        saveDecks()
+    }
+    
+    
     func createDeck(name: String) {
         let newDeck = Deck(name: name) // allowing user to create the deck first without adding card to it initiallly
         //let newDeck = Deck(name: name, cards: []) // commented out this code for now out to possibly use later if users must
@@ -35,6 +48,7 @@ class DeckManager: ObservableObject {
         saveDecks()
     }
     
+  
     // Remove a deck
     func removeDeck(_ deck: Deck) {
         if let index = deckList.firstIndex(where: { $0.id == deck.id }) {
