@@ -7,22 +7,45 @@
 
 import SwiftUI
 import Foundation
+
 struct CreateACardView : View{
     
     var body: some View {
+        
         ZStack {
             Image("background")
                 .resizable()
                 .ignoresSafeArea()
-            Text("Coming soon")
-                .font(.title)
-                .fontWeight(.bold)
-                .foregroundColor(.white)
+            
+            VStack{
+                Spacer()
+                
+                HStack{
+                    Spacer()
+                    Text("Feature coming soon!")
+                        .font(.title)
+                        .fontWeight(.bold)
+                        .foregroundColor(.white)
+                   
+                    Spacer()
+                   
+                }
+                
+                Text("Create your custom cards and abilities here!")
+                    .fontWeight(.bold)
+                    .foregroundColor(.white)
+
+                
+                
+                Spacer()
+            }
+            
+
         }
     }
    
-
 }
+
 #Preview {
-    AccountView()
+    CreateACardView()
 }
