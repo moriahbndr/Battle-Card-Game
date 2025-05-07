@@ -97,6 +97,10 @@ struct CardMenu: View {
                         
                     }
                     
+                    .navigationDestination(isPresented: $showingAddCards) {
+                        AddCardsView()
+                    }
+                    
                     .navigationDestination(isPresented: $showingCreateCard) {
                         CreateACardView()
                     }
