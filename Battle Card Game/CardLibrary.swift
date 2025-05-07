@@ -6,8 +6,8 @@
 //
 import SwiftUI
 
-struct Card: Identifiable, Equatable {
-    let id = UUID()
+struct Card: Identifiable, Equatable, Codable {
+    var id = UUID()
     let name: String
     let power: Int
     let imageName: String
@@ -15,7 +15,7 @@ struct Card: Identifiable, Equatable {
     var image: Image {
         Image(imageName)
     }
-
+    
     var cardLibrary: [Card] = []       // card inventory
 }
 
