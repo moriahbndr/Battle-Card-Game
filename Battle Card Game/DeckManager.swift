@@ -13,7 +13,7 @@
 import SwiftUI
 import Foundation
 
-class DeckManager: ObservableObject, Codable {
+class DeckManager: ObservableObject {
         
     
     @Published var deckList: [Deck] = []       // deck inventory
